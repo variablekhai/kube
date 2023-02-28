@@ -8,6 +8,7 @@ const poppins = Poppins({
 
 const Colors = {
     primary: "#9155fd",
+    secondary: "#57535e",
 }
 
 const theme = createTheme({
@@ -15,6 +16,22 @@ const theme = createTheme({
         primary: {
             main: Colors.primary,
         },
+        secondary: {
+            main: Colors.secondary,
+        },
+        success: {
+            main: "#56ca00",
+        },
+        warning: {
+            main: "#ffb400",
+        },
+        error: {
+            main: "#ff4c51",
+        },
+        info: {
+            main: "#16b1ff"
+        }
+        
     },
     typography: {
         fontFamily: "Poppins, sans-serif",

@@ -14,7 +14,6 @@ import { useContext } from "react";
 import { HasAccountContext } from "@/contexts/HasAccountContext";
 
 export default function LoginForm() {
-
   const {
     register,
     handleSubmit,
@@ -38,8 +37,14 @@ export default function LoginForm() {
       <form noValidate onSubmit={onSubmit}>
         <Grid item>
           <TextField
-            {...errors.email?.type === "required" && { error: true, helperText: "Please fill in the field" }}
-            {...errors.email?.type === "pattern" && { error: true, helperText: "Please enter a valid email" }}
+            {...(errors.email?.type === "required" && {
+              error: true,
+              helperText: "Please fill in the field",
+            })}
+            {...(errors.email?.type === "pattern" && {
+              error: true,
+              helperText: "Please enter a valid email",
+            })}
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             variant="outlined"
             label="Email"
@@ -47,8 +52,11 @@ export default function LoginForm() {
             sx={{ mb: 1.5 }}
           />
           <TextField
-            {...errors.password?.type === "required" && { error: true, helperText: "Please fill in the field" }}
-            {...register("password", { required: true})}
+            {...(errors.password?.type === "required" && {
+              error: true,
+              helperText: "Please fill in the field",
+            })}
+            {...register("password", { required: true })}
             variant="outlined"
             label="Password"
             fullWidth
@@ -85,7 +93,10 @@ export default function LoginForm() {
       <Grid item xs={12} sx={{ textAlign: "center" }}>
         <Typography variant="h5">
           New on our platform?{" "}
-          <Link onClick={() => setHasAccount(false)} sx={{ textDecoration: "none", ml: 1, cursor: "pointer" }}>
+          <Link
+            onClick={() => setHasAccount(false)}
+            sx={{ textDecoration: "none", ml: 1, cursor: "pointer" }}
+          >
             Create an account
           </Link>
         </Typography>

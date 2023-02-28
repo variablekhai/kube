@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kube-dev-85549-authRole",
+      "UnauthRoleArn": "arn:aws:iam::856541452624:role/amplify-kube-dev-85549-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::856541452624:role/amplify-kube-dev-85549-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-kube-dev-85549-deployment",
+      "UnauthRoleName": "amplify-kube-dev-85549-unauthRole",
+      "StackName": "amplify-kube-dev-85549",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:856541452624:stack/amplify-kube-dev-85549/a5ccbf70-b702-11ed-8876-0279b691eeee",
+      "AmplifyAppId": "d36brh2n37lowf"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d36brh2n37lowf",
+          "type": "cicd"
+        }
+      },
+      "api": {
+        "kube": {}
+      }
+    }
+  }
+}

@@ -99,7 +99,10 @@ export default function RegisterForm() {
       <Grid item xs={12} sx={{ textAlign: "center" }}>
         <Typography variant="h5">
           Already have an account?
-          <Link onClick={() => setHasAccount(true)} sx={{ textDecoration: "none", ml: 1, cursor: "pointer" }}>
+          <Link
+            onClick={() => setHasAccount(true)}
+            sx={{ textDecoration: "none", ml: 1, cursor: "pointer" }}
+          >
             Sign in here
           </Link>
         </Typography>
