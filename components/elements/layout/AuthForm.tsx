@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import GoogleAuthForm from "../auth/GoogleAuthForm";
 import LoginForm from "../auth/LoginForm";
 import RegisterForm from "../auth/RegisterForm";
 
@@ -43,24 +44,7 @@ export default function AuthForm() {
             <Typography variant="h5">or</Typography>
           </Divider>
         </Grid>
-        <Grid item xs={12} sx={{ textAlign: "center" }}>
-          <IconButton>
-            <Image
-              src="https://cdn.cdnlogo.com/logos/g/35/google-icon.svg"
-              alt="google"
-              width={20}
-              height={20}
-            />
-          </IconButton>
-          <IconButton>
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-              alt="github"
-              width={20}
-              height={20}
-            />
-          </IconButton>
-        </Grid>
+        <GoogleAuthForm />
       </Grid>
     </Box>
   );

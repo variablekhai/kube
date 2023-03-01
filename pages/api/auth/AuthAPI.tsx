@@ -1,6 +1,7 @@
 import AlertSnackbar from "@/components/elements/misc/AlertSnackbar";
 import { Auth } from "aws-amplify";
 import router from "next/router";
+import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth";
 
 export const AuthAPI = {
   //sign up user with email and password only aws amplify
@@ -16,6 +17,11 @@ export const AuthAPI = {
       router.push("/dashboard")
     );
     return user;
+  },
+  GoogleAuth: async () => {
+    await Auth.federatedSignIn({
+      provider: CognitoHostedUIIdentityProvider.Google,
+    });
   },
   //sign out user
   signOut: async () => {
