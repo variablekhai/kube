@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "kube0040689b",
+  "functionName": "kube0040689bCustomMessage",
+  "resourceName": "kube0040689bCustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "C:\\snapshot\\repo\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "kube0040689bCustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "http://localhost:3000/dashboard/",
+  "EMAILSUBJECT": "Kube Account Confirmation",
+  "EMAILMESSAGE": "Welcome to kube! You are one step away from completing your account. To confirm your account, please click on the following link",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}

@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   Checkbox,
@@ -12,19 +13,24 @@ import {
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { HasAccountContext } from "@/contexts/HasAccountContext";
+import { AuthAPI } from "@/pages/api/auth/AuthAPI";
+import AlertSnackbar from "../misc/AlertSnackbar";
 
 export default function LoginForm() {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  });
-
   const { setHasAccount } = useContext(HasAccountContext);
+
+  const onSubmit = handleSubmit((data) => {
+    AuthAPI.signIn(data.email, data.password).catch((err) => {
+      setError("email", { type: "server", message: err.message });
+    });
+  });
 
   return (
     <>
@@ -36,6 +42,11 @@ export default function LoginForm() {
       </Grid>
       <form noValidate onSubmit={onSubmit}>
         <Grid item>
+          {errors.email?.type === "server" && (
+            <Alert severity="error" sx={{ mb: 2 }}>
+              {errors.email?.message?.toString()}
+            </Alert>
+          )}
           <TextField
             {...(errors.email?.type === "required" && {
               error: true,
@@ -44,6 +55,9 @@ export default function LoginForm() {
             {...(errors.email?.type === "pattern" && {
               error: true,
               helperText: "Please enter a valid email",
+            })}
+            {...(errors.email?.type === "server" && {
+              error: true,
             })}
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             variant="outlined"
@@ -55,6 +69,9 @@ export default function LoginForm() {
             {...(errors.password?.type === "required" && {
               error: true,
               helperText: "Please fill in the field",
+            })}
+            {...(errors.email?.type === "server" && {
+              error: true,
             })}
             {...register("password", { required: true })}
             variant="outlined"

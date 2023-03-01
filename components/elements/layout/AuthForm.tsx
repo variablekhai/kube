@@ -15,6 +15,8 @@ import RegisterForm from "../auth/RegisterForm";
 export default function AuthForm() {
 
   const [hasAccount, setHasAccount] = useState(true);
+  const [AuthError, setAuthError] = useState(false);
+  const [AuthErrorMessage, setAuthErrorMessage] = useState("");
 
   return (
     <Box
@@ -33,7 +35,7 @@ export default function AuthForm() {
           padding: "2rem",
         }}
       >
-        <HasAccountContext.Provider value={ {hasAccount, setHasAccount} }>
+        <HasAccountContext.Provider value={ {hasAccount, setHasAccount, AuthError, setAuthError, AuthErrorMessage, setAuthErrorMessage} }>
           { hasAccount ? <LoginForm /> : <RegisterForm />}
         </HasAccountContext.Provider> 
         <Grid item xs={12} sx={{ my: 3 }}>

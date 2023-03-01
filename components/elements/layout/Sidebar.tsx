@@ -22,6 +22,7 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import MuiDrawer from "@mui/material/Drawer";
 import { TbSubtask } from "react-icons/tb";
 import { IoMdAnalytics } from "react-icons/io";
+import AvatarMenu from "../misc/AvatarMenu";
 
 const SidebarContents = {
   items: [
@@ -161,9 +162,7 @@ export default function Sidebar() {
           >
             <BiBell />
           </IconButton>
-          <IconButton>
-            <Avatar sx={{ width: "32px", height: "32px" }} src="https://demos.themeselection.com/marketplace/materio-mui-react-nextjs-admin-template/demo-1/images/avatars/1.png" />
-          </IconButton>
+          <AvatarMenu />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

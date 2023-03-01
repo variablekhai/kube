@@ -19,6 +19,43 @@
       "service": "AppSync"
     }
   },
+  "auth": {
+    "kubeca424f23": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 6
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "kube0040689bCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {
     "amplifyhosting": {
       "lastPushTimeStamp": "2023-02-28T01:10:37.349Z",
@@ -27,6 +64,46 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_kube0040689bCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kube0040689bCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_kube0040689bCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kube0040689bCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_kube0040689bCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kube0040689bCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_kube0040689bCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kube0040689bCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_kube0040689bCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kube0040689bCustomMessage"
+        }
+      ]
+    },
     "AMPLIFY_hosting_amplifyhosting_appId": {
       "usedBy": [
         {

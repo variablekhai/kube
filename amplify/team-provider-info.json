@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-kube-dev-85549-unauthRole",
       "StackName": "amplify-kube-dev-85549",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:856541452624:stack/amplify-kube-dev-85549/a5ccbf70-b702-11ed-8876-0279b691eeee",
-      "AmplifyAppId": "d36brh2n37lowf"
+      "AmplifyAppId": "d36brh2n37lowf",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-kube-dev-85549-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "hosting": {
@@ -20,6 +21,20 @@
       },
       "api": {
         "kube": {}
+      },
+      "auth": {
+        "kube072108f9": {},
+        "kube0040689b": {},
+        "kubeca424f23": {}
+      },
+      "function": {
+        "kube0040689bCustomMessage": {
+          "REDIRECTURL": "http://localhost:3000/dashboard/",
+          "EMAILSUBJECT": "Kube Account Confirmation",
+          "EMAILMESSAGE": "Welcome to kube! You are one step away from completing your account. To confirm your account, please click on the following link",
+          "deploymentBucketName": "amplify-kube-dev-85549-deployment",
+          "s3Key": "amplify-builds/kube0040689bCustomMessage-31586d482b3265624348-build.zip"
+        }
       }
     }
   }
